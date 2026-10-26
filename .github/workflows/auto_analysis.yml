@@ -5,6 +5,10 @@ on:
   schedule:
     - cron: '0 0 */3 * *'
 
+# 🔑 [추가됨] GitHub Actions에 명시적 권한 부여
+permissions:
+  contents: write
+
 jobs:
   build-and-analyze:
     runs-on: ubuntu-latest
@@ -32,9 +36,6 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 변경되거나 생성된 모든 파일(outputs/, data/ 등)을 안전하게 스테이징
           git add -A
-          
-          # 커밋할 변경사항이 있을 때만 커밋 및 푸시 진행
           git diff-index --quiet HEAD || git commit -m "chore: auto-update quantitative analysis report"
           git push
