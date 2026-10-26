@@ -31,7 +31,7 @@ def fetch_market_data():
         except Exception as e:
             print(f"  - {name} ({ticker}) 수집 실패: {e}")
             
-    df_market = pd.DataFrame(raw_data).fillna(method='ffill').dropna()
+    df_market = pd.DataFrame(raw_data).ffill().dropna()
     
     # 파생 지표 계산
     # 1. SOFR / Base Rate 추정 (%)
