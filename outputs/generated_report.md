@@ -1,6 +1,6 @@
 # [자동 검증 보고서] 사모대출(Private Credit) 및 모험자본 구조 개편 퀀트 데이터 입증
 
-**검증 수행 일시:** 2026-10-26  
+**검증 수행 일시:** 2026-10-28  
 **분석 파이프라인:** GitHub Actions Quant Pipeline (yfinance & Monte Carlo Simulation)
 
 ---
